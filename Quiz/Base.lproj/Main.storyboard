@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="iRx-mT-ujf">
+                                <rect key="frame" x="77" y="198" width="260" height="474"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo___naruto___by_shikomt_by_shikomt_dbemuvd-fullview" translatesAutoresizingMaskIntoConstraints="NO" id="m1Z-Y3-5KY">
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="124"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="124" id="83U-au-zHi"/>
+                                            <constraint firstAttribute="width" constant="260" id="WNF-OO-WF3"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="与えられた問題にしたの３つの選択肢から選んで答えてください。すべてを答え終わると最後に点数が表示されます" translatesAutoresizingMaskIntoConstraints="NO" id="Bau-m9-hgI">
+                                        <rect key="frame" x="0.0" y="204" width="260" height="142"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Plk-7d-iAq">
+                                        <rect key="frame" x="0.0" y="426" width="260" height="48"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="START">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="UJh-wY-GrC" kind="presentation" id="oOe-XY-6EG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="iRx-mT-ujf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5Ni-ED-Fn0"/>
+                            <constraint firstItem="iRx-mT-ujf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c2S-bC-cRc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+        </scene>
+        <!--Quiz View Controller-->
+        <scene sceneID="LtA-Mt-u8s">
+            <objects>
+                <viewController id="UJh-wY-GrC" customClass="QuizViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LPn-Me-Hys">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YjW-q6-Ud5">
+                                <rect key="frame" x="40" y="396" width="334" height="268"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mD0-bh-Qj8">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="76"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="20" maxX="10" maxY="20"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="choiceAnswerWithSender:" destination="UJh-wY-GrC" eventType="touchUpInside" id="JKv-hH-8oN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Je-cC-3Tv">
+                                        <rect key="frame" x="0.0" y="96" width="334" height="76"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="20" maxX="10" maxY="20"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="choiceAnswerWithSender:" destination="UJh-wY-GrC" eventType="touchUpInside" id="Cju-di-IMZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRe-M0-XNy">
+                                        <rect key="frame" x="0.0" y="192" width="334" height="76"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="20" maxX="10" maxY="20"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="choiceAnswerWithSender:" destination="UJh-wY-GrC" eventType="touchUpInside" id="4Rv-X7-BGe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FM1-do-ZdH">
+                                <rect key="frame" x="69" y="251" width="276" height="115"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="276" id="1At-Je-SFP"/>
+                                    <constraint firstAttribute="height" constant="115" id="Pmx-jO-bBJ"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo___naruto___by_shikomt_by_shikomt_dbemuvd-fullview" translatesAutoresizingMaskIntoConstraints="NO" id="RB6-MD-At1">
+                                <rect key="frame" x="121" y="684" width="172" height="108"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="108" id="Mqx-Le-AMf"/>
+                                    <constraint firstAttribute="width" constant="172" id="fIg-92-o3c"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="fxY-Q5-4t2" firstAttribute="bottom" secondItem="RB6-MD-At1" secondAttribute="bottom" constant="16" id="3Al-bc-brI"/>
+                            <constraint firstItem="fxY-Q5-4t2" firstAttribute="trailing" secondItem="FM1-do-ZdH" secondAttribute="trailing" constant="69" id="9rL-nQ-e9a"/>
+                            <constraint firstItem="YjW-q6-Ud5" firstAttribute="leading" secondItem="fxY-Q5-4t2" secondAttribute="leading" constant="40" id="Alh-eh-K1m"/>
+                            <constraint firstItem="YjW-q6-Ud5" firstAttribute="top" secondItem="FM1-do-ZdH" secondAttribute="bottom" constant="30" id="GHA-fK-9Mt"/>
+                            <constraint firstItem="RB6-MD-At1" firstAttribute="top" secondItem="YjW-q6-Ud5" secondAttribute="bottom" constant="20" id="GLi-Jp-tr7"/>
+                            <constraint firstItem="fxY-Q5-4t2" firstAttribute="trailing" secondItem="YjW-q6-Ud5" secondAttribute="trailing" constant="40" id="dj4-vk-VRb"/>
+                            <constraint firstItem="fxY-Q5-4t2" firstAttribute="trailing" secondItem="RB6-MD-At1" secondAttribute="trailing" constant="121" id="iUn-SS-FyB"/>
+                            <constraint firstItem="RB6-MD-At1" firstAttribute="leading" secondItem="fxY-Q5-4t2" secondAttribute="leading" constant="121" id="pWK-n7-jpv"/>
+                            <constraint firstItem="FM1-do-ZdH" firstAttribute="leading" secondItem="fxY-Q5-4t2" secondAttribute="leading" constant="69" id="wtc-o0-a9s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fxY-Q5-4t2"/>
+                    </view>
+                    <connections>
+                        <outlet property="choiceOne" destination="mD0-bh-Qj8" id="e4T-ca-ysX"/>
+                        <outlet property="choiceThree" destination="YRe-M0-XNy" id="FuO-3g-sJB"/>
+                        <outlet property="choiceTwo" destination="9Je-cC-3Tv" id="JuT-lK-j5U"/>
+                        <outlet property="quizTextView" destination="FM1-do-ZdH" id="Dkd-zx-YDD"/>
+                        <segue destination="Cd0-4t-YoE" kind="presentation" identifier="toResultView" id="qDx-qX-4zr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JDm-m4-6QL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1092.753623188406" y="126.5625"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="9SC-aw-NYN">
+            <objects>
+                <viewController id="Cd0-4t-YoE" customClass="ResultViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g0z-uw-ZYK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="7vj-dW-YiM">
+                                <rect key="frame" x="81.5" y="238" width="251" height="366"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo___naruto___by_shikomt_by_shikomt_dbemuvd-fullview" translatesAutoresizingMaskIntoConstraints="NO" id="1LE-wQ-3TS">
+                                        <rect key="frame" x="0.0" y="0.0" width="251" height="152"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="251" id="FJI-Oe-Bd7"/>
+                                            <constraint firstAttribute="height" constant="152" id="PzC-gf-kBk"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sP8-Ez-2yr">
+                                        <rect key="frame" x="0.0" y="202" width="251" height="66"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SX2-CM-fCW">
+                                        <rect key="frame" x="0.0" y="318" width="251" height="48"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="タイトルへ戻る">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backBtn:" destination="Cd0-4t-YoE" eventType="touchUpInside" id="Pbw-Sy-Vfd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7vj-dW-YiM" firstAttribute="centerX" secondItem="g0z-uw-ZYK" secondAttribute="centerX" id="C1j-Ae-60u"/>
+                            <constraint firstItem="7vj-dW-YiM" firstAttribute="centerY" secondItem="g0z-uw-ZYK" secondAttribute="centerY" id="MI5-Jj-xJy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YPT-h2-4SL"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VQE-do-FIs"/>
+                    <connections>
+                        <outlet property="resultLabel" destination="sP8-Ez-2yr" id="GIC-Xv-TE6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BCl-3W-GcB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2027.5362318840582" y="126.5625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo___naruto___by_shikomt_by_shikomt_dbemuvd-fullview" width="1600" height="813"/>
+    </resources>
+</document>
