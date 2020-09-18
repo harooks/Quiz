@@ -15,11 +15,21 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var choiceTwo: UIButton!
     @IBOutlet weak var choiceThree: UIButton!
     
+    @IBOutlet weak var quizTimer: UILabel!
+    
     var quizArray = [Any]()
     var correctAnswer:Int = 0
+    var counter:Int = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let countDown = Timer.scheduledTimer(
+             timeInterval: 1,
+             target: self,
+             selector: #selector(self.countDown),
+             userInfo: nil,
+             repeats: true)
         
         quizArray.append(["我愛羅はどこの忍者ですか？","木の葉隠れ", "砂がくれ", "霧隠れ", 2])
         quizArray.append(["ひなたの父の名前は","日向ミナト", "日向ヒザシ", "日向ヒアシ", 3])
@@ -27,16 +37,32 @@ class QuizViewController: UIViewController {
         quizArray.append(["鬼鮫の武器の名前","鮫刃", "鮫肌", "鮫布", 2])
         quizArray.append(["木の葉隠れの相談役のおじいさんの方の名前","水戸門ホムラ", "エビゾウ爺", "うたたねホムラ", 1])
         
+        print(quizArray)
+        print(quizArray.count)
+        
         quizArray.shuffle()
         choiceQuiz()
         // Do any additional setup after loading the view.
     }
     
+    @objc func countDown() {
+        //example functionality
+        if counter > 0 {
+            counter -= 1
+           quizTimer.text = String(counter)
+        } else {
+            if quizArray.count != 0 {
+            quizArray.remove(at: 0)
+            choiceQuiz()
+            counter = 5
+            }
+        }
+    }
+    
     func choiceQuiz(){
-        
         //一時的にクイズ取り出す (per question) since index 0 is the question
         let tmpArray = quizArray[0] as! [Any]
-        
+         
         //view question. 
         quizTextView.text = tmpArray[0] as? String
         
@@ -62,23 +88,26 @@ class QuizViewController: UIViewController {
     
     @IBAction func choiceAnswer(sender: UIButton) {
         let tmpArray = quizArray[0] as! [Any]
+        countDown()
         
-        if tmpArray[4] as! Int == sender.tag{
+        if tmpArray[4] as! Int == sender.tag {
             correctAnswer += 1
+        } else if tmpArray[4] as! Int != sender.tag || counter < 0 {
+            correctAnswer += 0
         }
         
         //remove answered quiz from quizArray
         quizArray.remove(at: 0)
+
         
         //問題無くなったから結果の表示へ
         if quizArray.count == 0 {
             performSegueToResult()
         } else {
             choiceQuiz()
+            counter = 5
         }
     }
-    
-    
 
     /*
     // MARK: - Navigation
